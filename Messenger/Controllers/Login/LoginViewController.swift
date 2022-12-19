@@ -8,8 +8,12 @@
 import Foundation
 import UIKit
 import FirebaseAuth
+import FBSDKLoginKit
+import JGProgressHUD
 
 class LoginViewController:UIViewController{
+    
+    private let spinner = JGProgressHUD(style: .dark)
     
     //스크롤뷰를 선언 후 설정함.
     private let scrollView:UIScrollView = {
@@ -153,8 +157,6 @@ class LoginViewController:UIViewController{
                                 width: scrollView.width / 3,
                                 height: 52)
         
-        
-        
     }
     
     //MARK: - objc private function
@@ -171,10 +173,17 @@ class LoginViewController:UIViewController{
             
         }
         
+        spinner.show(in: view)
+        
         //파이어베이스 로그인 로직
         FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password,completion: {[weak self] authResult,error in
             guard let strongSelf = self else{
                 return
+            }
+            
+            //비동기로 수행
+            DispatchQueue.main.async {
+                strongSelf.spinner.dismiss()
             }
             
             guard let result = authResult,error == nil else{

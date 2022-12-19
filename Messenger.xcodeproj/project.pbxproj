@@ -27,6 +27,7 @@
 		DE165D18294AF15300A9512E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE165D17294AF15300A9512E /* Extensions.swift */; };
 		DE165D5C294C033800A9512E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE165D5B294C033800A9512E /* GoogleService-Info.plist */; };
 		DE165DA3294C4BB800A9512E /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE165DA2294C4BB800A9512E /* DatabaseManager.swift */; };
+		DE165DA6294FFD1200A9512E /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE165DA5294FFD1200A9512E /* ChatViewController.swift */; };
 		DFC2E6DFE4FEF028FC2BB892 /* Pods_Messenger_MessengerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBE32E7169CA564B07643C32 /* Pods_Messenger_MessengerUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +78,8 @@
 		DE165D17294AF15300A9512E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		DE165D5B294C033800A9512E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DE165DA2294C4BB800A9512E /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		DE165DA4294FEAAD00A9512E /* Messenger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Messenger.entitlements; sourceTree = "<group>"; };
+		DE165DA5294FFD1200A9512E /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		E5424B3305CF9AEE0F52E3CC /* Pods-Messenger-MessengerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messenger-MessengerUITests.release.xcconfig"; path = "Target Support Files/Pods-Messenger-MessengerUITests/Pods-Messenger-MessengerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FBE32E7169CA564B07643C32 /* Pods_Messenger_MessengerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Messenger_MessengerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -144,6 +147,7 @@
 		DE165CD2294AC33000A9512E /* Messenger */ = {
 			isa = PBXGroup;
 			children = (
+				DE165DA4294FEAAD00A9512E /* Messenger.entitlements */,
 				DE165D5B294C033800A9512E /* GoogleService-Info.plist */,
 				DE165D07294AE7DD00A9512E /* Resources */,
 				DE165D06294AE7D100A9512E /* ViewModels */,
@@ -181,6 +185,7 @@
 				DE165D0F294AE9BA00A9512E /* VideoPlayerViewController.swift */,
 				DE165D11294AEA0900A9512E /* NewConversationViewController.swift */,
 				DE165D13294AEA5200A9512E /* ProfileViewController.swift */,
+				DE165DA5294FFD1200A9512E /* ChatViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -500,6 +505,7 @@
 				DE165CD4294AC33000A9512E /* AppDelegate.swift in Sources */,
 				DE165D14294AEA5200A9512E /* ProfileViewController.swift in Sources */,
 				DE165CD6294AC33000A9512E /* SceneDelegate.swift in Sources */,
+				DE165DA6294FFD1200A9512E /* ChatViewController.swift in Sources */,
 				DE165D0E294AE9A900A9512E /* PhotoViewerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -676,6 +682,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Messenger/Messenger.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -713,6 +720,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Messenger/Messenger.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZJX66QZ527;

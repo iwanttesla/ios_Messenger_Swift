@@ -12,7 +12,7 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet var tableView:UITableView!
     
-    let data = ["Log out"]
+    let data = ["로그아웃"]
 
     override func viewDidLoad() {
         super.viewDidLoad()

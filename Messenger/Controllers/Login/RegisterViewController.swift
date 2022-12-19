@@ -8,9 +8,11 @@
 import Foundation
 import UIKit
 import FirebaseAuth
+import JGProgressHUD
 
 class RegisterViewController:UIViewController{
     
+    private let spinner = JGProgressHUD(style: .dark)
     
     //스크롤뷰를 선언 후 설정함.
     private let scrollView:UIScrollView = {
@@ -241,11 +243,17 @@ class RegisterViewController:UIViewController{
             
         }
         
+        spinner.show(in: view)
+        
         //파이어베이스 로그인 로직
         DatabaseManager.shared.userExists(with: email, comlpetion: { [weak self] exist in
             
             guard let strongSelf = self else{
                 return
+            }
+            
+            DispatchQueue.main.async {
+                strongSelf.spinner.dismiss()
             }
             
             guard !exist else{
