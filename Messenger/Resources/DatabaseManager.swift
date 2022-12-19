@@ -31,12 +31,19 @@ extension DatabaseManager{
         })
     }
     
-    public func insertUser(with user: ChatAppUser){
+    public func insertUser(with user: ChatAppUser, completion: @escaping (Bool) -> Void ){
         database.child(user.safeEmail).setValue([
             "first_name":user.firstName,
             "last_name":user.lastName
             
-        ])
+        ],withCompletionBlock: { error, _ in
+            guard error == nil else{
+                print("데이터베이스를 쓰는데 실패함.")
+                completion(false)
+                return
+            }
+            completion(true)
+        })
     }
 }
 
@@ -51,5 +58,8 @@ struct ChatAppUser{
         
         return safeEmail
     }
-//    let profilePictureUrl:String
+    var profilePictureFileName:String{
+        return "\(safeEmail)_profile_picture.png"
+    }
+    
 }
